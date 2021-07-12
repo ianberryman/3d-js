@@ -1,21 +1,21 @@
-import {Component} from "./Component";
-import * as THREE from 'three'
+import Component from "./Component";
+import * as BABYLON from 'babylonjs';
 
 export const OBJECT3D = 'OBJECT3D'
 
-export default class Object3dComponent implements Component {
-    readonly name: string
-    protected mesh: THREE.Mesh
+export default class Object3dComponent extends Component {
+    protected mesh: BABYLON.AbstractMesh
 
     constructor() {
-        this.name = OBJECT3D
+        super()
+        this.type = OBJECT3D
     }
 
-    setMesh(mesh: THREE.Mesh) {
+    setMesh(mesh: BABYLON.AbstractMesh) {
         this.mesh = mesh
     }
 
-    getMesh(): THREE.Mesh {
+    getMesh(): BABYLON.AbstractMesh {
         return this.mesh
     }
 

@@ -1,23 +1,24 @@
-import {Component} from "./Component";
+import Component from "./Component";
+import {ComponentRegistry} from "./EntityManager";
 
-type Components = {
-    [name: string]: any
+export type Components = {
+    [type: string]: Component
 }
 
 export default class Entity {
     readonly id: number
-    components: Components
+    readonly _archetypeName: string
+    _components: Components
 
-    constructor(id: number) {
+    constructor(id: number, archetypeName?: string) {
         this.id = id
-        this.components = []
+        this._components = {}
+        if (archetypeName) {
+            this._archetypeName = archetypeName
+        }
     }
 
-    addComponent(component: Component) {
-        this.components[component.name] = component
-    }
-
-    getComponent(componentName: string): Component {
-        return this.components[componentName]
+    getComponent(componentType: string): Component {
+        return this._components[componentType]
     }
 }

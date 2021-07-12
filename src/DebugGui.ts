@@ -5,7 +5,7 @@ type StatField = {
     resolver(): string,
 }
 
-export default class StatsGui {
+export default class DebugGui {
     canvas: HTMLCanvasElement
     fields: StatField[]
     statsContainer: HTMLDivElement

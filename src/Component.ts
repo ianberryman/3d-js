@@ -1,5 +1,5 @@
 
 
-export type Component = {
-    name: string
+export default class Component {
+    public type: string
 }

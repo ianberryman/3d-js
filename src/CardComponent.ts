@@ -1,7 +1,7 @@
 import CardController from "./CardController";
 import CardView from "./CardView";
 import Card from "./Card";
-import {Component} from "./Component";
+import Component from "./Component";
 
 export default class CardComponent{
     controller: CardController
